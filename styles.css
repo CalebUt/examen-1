@@ -1,16 +1,26 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --navy: #0a1628;
-  --deep: #0d1f3c;
-  --blue: #1a3a6b;
-  --accent: #c8a94a;
-  --accent2: #e8c96a;
-  --light: #e8eef6;
-  --white: #ffffff;
-  --muted: #8fa3c0;
+/* =============================================
+   VARIABLES Y RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+:root {
+  --navy:   #0a1628;
+  --deep:   #0d1f3c;
+  --blue:   #1a3a6b;
+  --accent: #c8a94a;
+  --accent2:#e8c96a;
+  --light:  #e8eef6;
+  --white:  #ffffff;
+  --muted:  #8fa3c0;
+}
+
+/* =============================================
+   BODY Y POSTER BASE
+   ============================================= */
 body {
   font-family: 'Barlow', sans-serif;
   background: #f0f4f8;
@@ -34,7 +44,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse at 80% 10%, rgba(26,58,107,0.6) 0%, transparent 50%),
     radial-gradient(ellipse at 10% 90%, rgba(200,169,74,0.15) 0%, transparent 40%),
     repeating-linear-gradient(
@@ -47,7 +57,9 @@ body {
   pointer-events: none;
 }
 
-/* TOP BAR */
+/* =============================================
+   BARRA SUPERIOR Y DECORACIÓN
+   ============================================= */
 .top-bar {
   height: 6px;
   background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
@@ -55,7 +67,27 @@ body {
   z-index: 2;
 }
 
-/* HEADER */
+.corner-decor {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(200,169,74,0.15);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.corner-decor::after {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  border: 1px solid rgba(200,169,74,0.1);
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
 .header {
   padding: 50px 60px 40px;
   position: relative;
@@ -105,7 +137,9 @@ body {
   max-width: 520px;
 }
 
-/* DIVIDER */
+/* =============================================
+   DIVISOR
+   ============================================= */
 .divider {
   margin: 0 60px;
   height: 1px;
@@ -114,14 +148,15 @@ body {
   z-index: 2;
 }
 
-/* CONTENT */
+/* =============================================
+   CONTENIDO Y SECCIONES
+   ============================================= */
 .content {
   padding: 40px 60px;
   position: relative;
   z-index: 2;
 }
 
-/* SECTION BLOCKS */
 .section-block {
   margin-bottom: 36px;
   display: grid;
@@ -135,7 +170,7 @@ body {
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .section-line {
@@ -182,7 +217,9 @@ body {
   font-weight: 300;
 }
 
-/* CARDS ROW */
+/* =============================================
+   CARDS — SECCIÓN 1
+   ============================================= */
 .cards-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -222,7 +259,9 @@ body {
   font-weight: 300;
 }
 
-/* ENTORNO GRID */
+/* =============================================
+   ENTORNO GRID — SECCIÓN 2
+   ============================================= */
 .entorno-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -253,7 +292,9 @@ body {
   font-weight: 300;
 }
 
-/* PLAN PILLS */
+/* =============================================
+   PLAN ESTRATÉGICO PILLS — SECCIÓN 3
+   ============================================= */
 .plan-list {
   display: flex;
   flex-wrap: wrap;
@@ -282,7 +323,9 @@ body {
   flex-shrink: 0;
 }
 
-/* FOOTER */
+/* =============================================
+   FOOTER
+   ============================================= */
 .footer {
   margin: 0 60px;
   padding: 24px 0;
@@ -303,27 +346,17 @@ body {
   text-transform: uppercase;
 }
 
+.footer-center {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
 .footer-right {
   font-size: 11px;
   color: var(--muted);
   letter-spacing: 1px;
-}
-
-/* CORNER DECOR */
-.corner-decor {
-  position: absolute;
-  bottom: 60px;
-  right: 60px;
-  width: 120px;
-  height: 120px;
-  border: 1px solid rgba(200,169,74,0.15);
-  transform: rotate(45deg);
-  z-index: 1;
-}
-
-.corner-decor::after {
-  content: '';
-  position: absolute;
-  inset: 15px;
-  border: 1px solid rgba(200,169,74,0.1);
 }
